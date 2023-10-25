@@ -1,0 +1,15 @@
+@main() {
+  one: int = const 1;
+  two: int = const 2;
+  pointer: ptr<int> = alloc one; 
+  store pointer two;
+  retval: int = call @func pointer;
+  read: int = load pointer;
+  print read;
+  print retval;
+}
+
+@func(point : ptr<int>) : int {
+    val: int = load point;
+    ret val;
+}

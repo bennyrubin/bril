@@ -1,0 +1,14 @@
+
+@main() {
+  one: int = const 1;
+  two: int = const 2;
+  pointer: ptr<ptr<int>> = alloc one; 
+  pointer2: ptr<int> = alloc one;
+  store pointer2 one;
+  store pointer pointer2;
+  pointer3 : ptr<int> = load pointer;
+  val : int = load pointer3;
+  print val;
+  free pointer;
+  free pointer2;
+}
